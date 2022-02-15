@@ -1,0 +1,59 @@
+{
+  "name": "myeasy",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-brands-svg-icons": "^5.15.3",
+    "@fortawesome/free-regular-svg-icons": "^5.15.3",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "@react-pdf/renderer": "^2.0.15",
+    "animate.css": "^4.1.1",
+    "apexcharts": "^3.27.1",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
+    "bootstrap-v4-rtl": "^4.6.0-2",
+    "i18next": "^20.3.1",
+    "i18next-browser-languagedetector": "^6.1.1",
+    "i18next-http-backend": "^1.3.2",
+    "i18next-xhr-backend": "^3.2.2",
+    "pusher-js": "^7.0.3",
+    "react": "^17.0.1",
+    "react-apexcharts": "^1.3.9",
+    "react-bootstrap": "^1.4.0",
+    "react-charts": "^2.0.0-beta.7",
+    "react-dom": "^17.0.1",
+    "react-form-stepper": "^1.4.1",
+    "react-i18next": "^11.11.0",
+    "react-js-pagination": "^3.0.3",
+    "react-notifications": "^1.7.2",
+    "react-phone-number-input": "^3.1.23",
+    "react-recaptcha": "^2.3.10",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^0.9.5",
+    "react-share-social": "^0.1.47",
+    "react-validation": "^3.0.7",
+    "validator": "^13.6.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not ie <= 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+
+.control:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 4px 4px 31px -6px #000000; 
+   box-shadow: 4px 4px 31px -6px #000000;
+  transform: scale(1.02);
+}

@@ -1,0 +1,31 @@
+/* Services */
+.services h2,
+.about h2, .about h3,
+.what h2,
+.contactus h2 {
+    color: #4597f5;
+}
+
+.services h2:hover,
+.about h2:hover,
+.what h2:hover,
+.contactus h2:hover {
+  color: #4597f5;
+  transform: scale(1.1);
+}
+
+.services .thumbnail {
+    border: 1px solid #4597f5 ;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.services .thumbnail path:hover {
+    color:#4597f5;
+}
+
+.services .thumbnail h4 {
+    color: #555;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

@@ -1,0 +1,8 @@
+.collapse.show {
+  visibility: visible;
+}
+
+.star:hover {
+  color: orange;
+  cursor: pointer;
+}

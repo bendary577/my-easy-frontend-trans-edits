@@ -1,0 +1,18 @@
+.backgroundDiv {
+  background-color: lightgray;
+  height: 100px;
+}
+
+@media screen and (max-width: 576px) and (min-width: 401px) {
+  textarea {
+    width: 400px;
+    height: 100px;
+  }
+}
+
+@media screen and (max-width: 400) {
+  textarea {
+    width: 400px;
+    height: 100px;
+  }
+}

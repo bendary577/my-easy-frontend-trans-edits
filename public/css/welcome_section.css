@@ -1,0 +1,28 @@
+
+/* ------------------------------------------------- Welcome ----------------------------------------------------------- */
+.welcome {
+    height: 700px;
+    /*
+    background-image: url("../images/Home/online-shopping.jpg");
+    background-attachment:scroll;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    */
+}
+  
+.welcome_text {
+    height: 75%;
+}
+
+@media only screen and (max-width: 600px) {
+    .welcome_image {
+      margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .welcome {
+      height: 900px;
+    }
+}

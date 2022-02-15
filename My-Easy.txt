@@ -1,0 +1,398 @@
+1 - Authentication : 
+	1.1 - user should be able to register as : 
+		- customer : a user that should be able to browse the web app. can buy items
+		- Seller : a user that should be able to create a store and sell items.
+			- individual : a single user (entrepreneur)
+			- company : a government verified corporation
+	1.2 - to register, user should provide : 
+		1.2.1 - if he is a customer : 
+				- first name
+				- second name
+				- email
+				- password
+				- address
+					- country
+					- province
+					- city
+					- street name, number
+					- house number
+				- phone number 
+				- specialization
+				- gender
+				- birth date
+				- zip code
+				- a copy from his national identity (photo)
+		1.2.2 - if he is a company : 
+				- company name
+				- company email
+				- company password
+				- company creation date
+				- company specialization
+				- company address
+				- commercial record
+				- tax card
+	1.3 - after registeration, user should recieve an email : 
+		1.3.1 - if user is customer : 
+			1.3.1.1 - his registeration info will be verified and approved
+			1.3.1.2 - then he will recieve a mail contains verification code (GO TO MAILS)
+		1.3.2 - if user is seller, 
+			1.3.2.1 - his registeration will be suspended
+			1.3.2.2 - he will be sent a mail containing meeting contact info with founder to verify registering info
+			1.3.2.3 - then he will be sent another mail with verification code to verify account with a code (GO TO MAILS)
+	1.4 - a user should be able to login with his username and password, if he forgot them, he should be sent an email containing login code to login to his account and change password (GO TO MAILS)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2 - Store : 
+	2.1 - sellers (individuals & companies) should be able to create their own store on the system (only one store for each seller)
+	2.2 - to create store, sellers should provide
+			  - store name
+			  - store creation date
+			  - store specialization
+	2.2 - after creating store sellers should be able to add items to it.
+	2.3 - to add item, sellers should provide : 
+			  - item name
+			  - item add date
+			  - item price
+			  - item category
+			  - item description
+			  - item photo
+			  - available items number
+	2.4 - when customer browse a store, he should view items paginated as cards with basic info, and buttons to (add to cart & buy now)
+	2.5 - when customer browse a store, he should be able to click on seller profile to view his info
+	2.6 - when customer browse a store, he should be able to click on item card to view more detailed info about the item, with a recommendation to store related items  
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3 - Ordering : 
+	3.1 - only registered customers should be able to order items from a store, unregistered customers will not be able to view system stores
+	3.2 - when customer click on (add to cart), item should be transfered to his own cart to be able to buy later
+		3.2.1 - when customer comes later to buy the item, system checks the number of available items. 
+		3.2.2 - if no more items are available, customer should be informed that the item was sold
+		3.2.3 - if item is still available, customer should be able to buy it.
+	3.3 - when customer click on (buy now), customer should be able to fill all required payment info immediately (GO TO PAYMENT)
+	3.4 - when a customer perform a succesful payment operation, seller should recieve a notification (GO TO NOTIFICATION)
+	3.5 - when a customer perform a succesful payment operation, admin should recieve a notification (GO TO NOTIFICATION) (GO TO ADMIN)
+	3.6 - system should save the order info :
+		- order date
+		- customer name
+		- customer id
+		- seller (individual or company) name
+		- item name
+		- item price
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4 - Payment : 
+	4.1 - if customer bought the item : 
+		4.1.1 - user should choose whick kind of cards he want, provide the payment info
+			- name
+			- address
+			- kind of bank cards
+			- card number
+		4.1.2 - the item price will be taken from customer bank account immediately (GO TO PAYMENT POLICY)
+		4.1.3 - seller will recieve a notification that a customer bought his item. he should deliver the item in 2 days to the customer place. (GO TO NOTIFICATION)
+			4.1.3.1 - seller should be able to make a pdf recieving invoice, with all item & customer info, download & print it. (GO TO PDF)
+		4.1.4 - if the customer didn't recieve the item in 2 days time. he can make a complaint(GO TO COMPLAINT)
+			4.1.4.1 - if complaint is verified, after 4 days from complaint verification date, user should be able to get his money back in a week (7 days).
+					  after deduction of 5% of the drawn amount (GO TO PAYMENT POLICY)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+5 - Complaint : 
+	5.1 - Customer should be able to send a Complaint if : 
+		5.1.1 - he ordered an item and didn't recieve it within 2 days.
+		5.1.2 - in case of fail order, if system informed him that he will get his money back in a week, but he didn't get his money
+	5.2 - Seller Should be able to create Complaint if : 
+		5.2.1 - customer claimed that he didn't recieve the item, but he actually did, seller should provide system with copy of recieving bill pdf (GO TO PDF)
+	5.3 - user should see : 
+		- text area to write the complaint text
+		- browse buttons to upload proving documents
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+6 - Sending Emails : 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+7 - Invoice : 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+8 - PDF : 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+9 - Notifications : 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+10 - Payment Policy : 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+11 - Order Delivery : 
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+12 - Admin : 
+	12.1 - system should have one unique admin
+	12.2 - Admin should login to system with a predefined unique password
+	12.3 - when logged in, admin should be able to manage all users.
+	12.4 - admin should be able to manage registeration requests
+		12.4.1 - when user registers, it will show up to the admin in the registeration requests page
+		12.4.2 - admin should review registeration requests data then :
+			12.4.2.1 - refuse request  					: user will recieve a mail that his registeration was refused (GO TO MAIL)
+			12.4.2.2 - suspend request until contact 	: user will recieve mail that his request was suspended until contact/meeting and review data (GO TO MAIL)
+			12.4.2.3 - accept request					: user will recieve a verification mail with a code to login (GO TO MAIL)
+	12.5 - admin should be able to manage complaints in review complaints page 
+		12.5.1 - when admin opens a certain complaint, he should view :
+					- complaint sender
+					- complaint date
+					- complaint description
+					- complaint documents
+		12.5.2 - admin should be able to respond to complaint with mail
+		12.5.3 - if complaint is related to money retrieval, admin should have option to send money back from bank to customer and send mail informing him that he will recieve his money within a week
+	12.6 - admin should have a wallet contains the available money account of his system
+	12.7 - when successful order is committed, admin should recieve a notification contains : 
+			- customer name
+			- seller name
+	12.8 - admin should view orders in orders page and view each order
+			- customer name
+			- seller name
+			- item
+			- price
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- System UI : (Color Pallete - Fonts)
+
+- System Screens : 
+		1 - Home Screen														: Mosaad - done						
+			1.1 - Welcome Section
+			1.2 - About Us Section
+			1.3 - Services Section
+			1.4 - Categories Section
+			1.5 - Contact Us Section
+		2 - Register Screen													: Bendary - done
+		3 - Login Screen 													: Bendary - done
+ 
+		4 - Views : 															
+			4.1 - Customer Profile Screen											: Bendary - done
+				4.1.1 - Customer Edit Profile Screen									: Bendary - done
+				4.1.2 - Browse Stores Screen										: Bendary - done
+					4.1.2.1 - Store Screen										: Mosaad - done
+					4.1.2.2 - View Seller Profile Screen								: Bendary - done
+					4.1.2.3 - View Item Details Screen								: Bendary - done
+				4.1.3 - My Cart Screen											: Bendary - done
+				4.1.4 - My Orders Screen										: Bendary - done
+					4.1.4.1 - View Order Details									: Mossad - done 																	
+				4.1.5 - Make a Complaint Screen										: Bendary - done
+				4.1.6 - Buy Item Screen											: Bendary - done
+
+			4.2 - Individual Seller Profile Screen										: Bendary 			
+				4.2.1 - Individual Seller Edit Profile Screen               
+				4.2.2 - Create Store Screen										: Mosaad - done
+					4.2.2.1 - Upload Item Screen									: Mosaad - done
+				4.2.3 - My Store Screen											: Bendary 
+				4.2.4 - Create Invoice Screen										: Mosaad - done
+				4.2.5 - Make Complaint Screen
+				4.2.6 - My Orders Screen																		
+				4.2.7 - View Customer Profile Screen									: Bendary
+				4.2.8 - My Invoices Screen										: Mosaad - done
+				4.2.9 - New Order Notification Screen (contains pdf)							: Bendary
+
+
+			4.3 - Company Seller Profile Screen
+				4.3.1 - Company Seller Edit Profile Screen
+				4.3.2 - Create Store Screen
+					4.2.2.1 - Upload Item Screen
+				4.2.3 - My Store Screen
+				4.3.4 - Create Invoice Screen
+				4.3.5 - Make Complaint Screen
+				4.3.6 - My Orders Screen
+				4.3.7 - View Customer Profile Screen
+				4.3.8 - My Invoices Screen
+
+			4.4 - Admin Profile Screen
+				4.4.1 - Registeration Requests Page
+				4.4.2 - Orders Page
+				4.4.3 - Complaints Page
+				4.4.4 - dashboard screen
+
+		5 - Search Result Screen
+		6 - Notifications Screen												
+		7 - Forget Password Screen												
+		8 - Forget Password Confirmation Screen
+		9 - Update Password Screen
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Classes : 
+	- User : 
+		- first name
+		- second name
+		- address
+		- email
+		- password
+		- zip code
+		- gender
+		- category
+		- phone number
+		- isBlocked
+		- isAccountActivated
+		- availableMoneyAmmount
+
+		- Seller : 
+			- seller bagde (gold - silver - bronze)
+			- hasStore
+			- no. of customers
+			- no. of orders
+			- order delivery speed
+			- rating
+			- no. of reviews
+
+		- customer :
+			- cart items
+			- no of orders
+
+		- Admin : 
+	
+	- Store : 
+		- name
+		- creation date
+		- specialization
+		- items
+		- rating
+		- no. of rating
+	
+	- Item : 
+		- name
+		- price
+		- description
+		- category
+		- upload date
+		- available number
+		- photo
+		- rating
+		- number of reviews
+		- comments
+		- item status
+
+	- categories : 
+
+	- comments : 
+	
+	- Order : 
+		- customer name
+		- customer id
+		- seller name
+		- seller id
+		- price
+		- item
+		- order time
+		- status 
+
+	- Invoice : 
+		- name
+		- price
+		- creation date
+		- expiration date
+		- items
+
+	- Notification :
+
+	- Complaint : 
+		- user name
+		- user id
+		- user mail
+		- description
+		- creation date 
+
+
+--------------------------
+package installed
+- bootstrap
+- react bootstrap
+- axios
+- animate.css
+- react router
+- font awesome
+- react scripts
+
+------------------------
+java -jar jd-gui-1.6.6.jar 
+
+Edu@2018@
+
+
+
+--------------------------------------
+additional attributes:
+--------------------
+store : details, main_image(relation)
+prodcut : main_image(relation) , another images(relation)
+user : username, approved, approval_files(relation)
+
+additional models : 
+----------------------
+Image Model
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

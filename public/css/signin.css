@@ -1,0 +1,32 @@
+@media screen and (max-width: 992px) and (min-width: 769px) {
+  .cardDiv {
+    width: 35%;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 577px) {
+  .loginDiv {
+    height: 100%;
+  }
+  .login {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 576px) and (min-width: 401px) {
+  .loginDiv {
+    height: 100%;
+  }
+  .login {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 400) {
+  .loginDiv {
+    height: 100%;
+  }
+  .login {
+    width: 80%;
+  }
+}

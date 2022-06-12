@@ -9,7 +9,7 @@ const resources = {
       home : {
         navbar : {
           services: "services",
-          aboutus: "aboutus",
+          aboutus: "about us",
           offers: "offers",
           contacts: "contacts",
           privacy_policy: "privacy policy",
@@ -17,7 +17,7 @@ const resources = {
           login : "login",
         },
         welcome : {
-          welcome: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. dummy text of the printing and typesetting industry.",
+          welcome: "Welcome to MyEasy, your number one payment solution for your business and day-to-day operations, start now and get your money flow !",
           start_now: "Start Now!",
         },
         services : {
@@ -155,13 +155,14 @@ const resources = {
             service:"Services",
             blog:"Blog",
             contact:"Contact us",
-            email:"dartagency@gmail.com",
-            phone:"+0123-345-6789",
+            email:"haythammhmoud@gmail.com",
+            first_phone:"+0100-338-8637",
+            second_phone:"+0109-555-8800",
             subscribe:"Subscribe To Our Newsletter",
             enteremail:"enter your email",
             follow:"follow us on social media",
             download:"download our app",
-            copy:"@Copyright 2021"
+            copy:"@Copyright 2022"
             ,right:".All Rights Reserved"
           },
           OrdersChart:{

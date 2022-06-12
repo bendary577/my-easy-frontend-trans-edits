@@ -1,40 +1,42 @@
 import { axiosInstance, authenticatedAxiosInstance } from "./axios";
 import { REGISTER_API, LOGIN_API, LOGOUT_API } from "../APIs/authentication";
 
+
 class AuthService {
 
   //----------------------------- register method --------------------------------------------
   register = async (data) => {
       const response = await axiosInstance.post(REGISTER_API,data);
-      if (response.status === 200) {
-        return response.data;
-      }
+      return response;
   }
 
   //----------------------------- login method --------------------------------------------
-  login = async (data) => {
+  login = async (dispatch, data) => {
+     dispatch({ type: 'REQUEST_LOGIN' });
+     try {
       const response = await axiosInstance.post(LOGIN_API,data);
-      if (response.status === 200) {
-          localStorage.setItem("token", response.data.token);
-          return response.data;
-      }else{
-
-      }
+        if (response.status === 200) {
+            dispatch({ type: 'LOGIN_SUCCESS', payload: data });
+            localStorage.setItem('currentUser', JSON.stringify(data));
+            localStorage.setItem("token", response.data.token);
+            return response;
+        }
+        dispatch({ type: 'LOGIN_ERROR', error: data.errors[0] });
+        return;
+    } catch (error) {
+      dispatch({ type: 'LOGIN_ERROR', error: error });
+    }
   }
 
   //----------------------------- logout method --------------------------------------------
-  logout = async () => {
+  logout = async (dispatch) => {
+    dispatch({ type: 'LOGOUT' });
     const response = await authenticatedAxiosInstance.post(LOGOUT_API);
-    console.log(LOGOUT_API)
-    console.log("bendaaaaaaaaaaaaaaaary")
     if (response.status === 200) {
-        console.log("success")
-        localStorage.removeItem("token");
-        return response.status;
-    }else if (response.status == 401){
-      console.log("not authenticated")
-      return response.status;
+      localStorage.removeItem('currentUser');
+      localStorage.removeItem('token');
     }
+    return response;
   }
 
   /*

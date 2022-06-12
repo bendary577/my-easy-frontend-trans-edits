@@ -9,7 +9,8 @@ const required = value => {
   if (!value) {
     return (
       <div className="alert alert-danger mt-2" role="alert">
-        {t(`home.PhoneVerificationCard.req_field`)}
+        {/* {t(`home.PhoneVerificationCard.req_field`)} */}
+        this field is required
       </div>
     );
   }
@@ -19,7 +20,8 @@ const vpassword = value => {
   if (value.length < 6 || value.length > 40) {
     return (
       <div className="alert alert-danger mt-2" role="alert">
-        {t(`home.PhoneVerificationCard.pass_alert`)}
+       {/* {t(`home.PhoneVerificationCard.pass_alert`)} */}
+       verification password is needed
       </div>
     );
   }
@@ -85,9 +87,8 @@ const vpassword = value => {
       });
     }
   }
-
   render() {
-    const{t}=this.props;
+    const { t } = this.props;
     return (
       <div class="background">
         <div className="col-md-12 ">
@@ -96,7 +97,6 @@ const vpassword = value => {
             <div className="my-2">
                 <h2>{t(`home.WithdrawalTypeCard.withdrawal_type`)}</h2>
             </div>
-
             <Form
               onSubmit={this.handleUpdatePassword}
               ref={c => {

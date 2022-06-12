@@ -2,15 +2,43 @@ import React, { Component } from "react";
 import logo from '../../../public/images/Home/myeasy-logo.png';
 import LanguageSwitcher from "../../Components/Buttons/LanguageSwitcher";
 import { withTranslation } from 'react-i18next';
+import SearchService from "../../Services/SearchService";
 import '../../../public/css/homenavbar_section.css';
 
 class HomeNavbar extends Component {
-
-
+  
     constructor(props){
         super(props);
+        this.state={
+          search_results : [], 
+          loading : false,
+          message : "",
+          successful : false
+        }
     }
 
+  componentDidMount = ()=>{
+    this.search();
+  }
+
+  search = async () => {
+      this.setState({
+          loading: true
+        });
+      let response = await SearchService.homeSearch();
+      if(response.status === 200){
+          this.setState({
+            search_results : response.data.data,
+            message: response.data.message,
+            successful: true
+          });
+      }else{
+          this.setState({
+            loading: false,
+            message: response.data.message
+          });
+      }
+  }
 
     render() {
 
@@ -52,6 +80,7 @@ class HomeNavbar extends Component {
                 <li className="nav-item">
                     <a className="nav-link" href="/termsofservice"> {t('home.navbar.terms_of_service')}</a>
                 </li>
+                {/*
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Dropdown
@@ -63,6 +92,7 @@ class HomeNavbar extends Component {
                     <a class="dropdown-item" href="#">Something else here</a>
                   </div>
                 </li>
+                */}
                 <li className="nav-item mx-2">
                     <LanguageSwitcher />
                 </li>
